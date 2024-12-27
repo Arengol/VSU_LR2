@@ -12,16 +12,11 @@ class TaskAdapter(context: Context, private val tasks: List<Task>) :
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.list_item_task, parent, false)
-
         val task = tasks[position]
-
-        // Заполняем данные в элементы списка
         val descriptionTextView: TextView = view.findViewById(R.id.descriptionTextView)
         val dateTextView: TextView = view.findViewById(R.id.dateTextView)
-
         descriptionTextView.text = task.description
         dateTextView.text = task.date
-
         return view
     }
 }

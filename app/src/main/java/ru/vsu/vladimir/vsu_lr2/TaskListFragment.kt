@@ -43,7 +43,6 @@ class TaskListFragment : Fragment() {
         return view
     }
 
-    // Показать диалог для создания или редактирования задачи
     private fun showTaskDialog(task: Task?, position: Int) {
         val dialogView = layoutInflater.inflate(R.layout.dialog_task, null)
         val descriptionEditText: EditText = dialogView.findViewById(R.id.descriptionEditText)

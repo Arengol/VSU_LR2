@@ -9,8 +9,6 @@ object TaskRepository {
 
     private const val PREFS_NAME = "task_prefs"
     private const val KEY_TASK_LIST = "task_list"
-
-    // Сохраняем список задач в SharedPreferences
     fun saveTasks(context: Context, tasks: List<Task>) {
         val prefs: SharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val editor = prefs.edit()
@@ -19,8 +17,6 @@ object TaskRepository {
         editor.putString(KEY_TASK_LIST, json)
         editor.apply()
     }
-
-    // Получаем список задач из SharedPreferences
     fun loadTasks(context: Context): List<Task> {
         val prefs: SharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val gson = Gson()
